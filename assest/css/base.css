@@ -1,0 +1,229 @@
+:root{
+    --white-color : #ffffff;
+    --black-color : #000000;
+    --text-color : #333333;
+    --primary-color : #ee4d2d;
+    --border-color : #dbdbdb;
+    --star-gold-color : #ffce3e;
+
+    --navbar-height : 34px;
+    --header-height : 120px;
+    --header-with-search-height : calc(var(--header-height)- var(--navbar-height));
+}
+
+*{
+    box-sizing: inherit; /*thêm padding và margin sẽ không thay đổi kích thước phần tử*/
+    margin: 0;
+}
+
+html{
+    font-size: 62.5%;
+    line-height: 1.6rem;/*Chiều cao của chữ*/
+    font-family: 'Roboto',sans-serif;
+    box-sizing: border-box;/*Khi thiết lập giá trị này, thì width và heigh sẽ bao gồm cho cả phần nội dung, padding và border nhưng không bao gồm margin.*/
+}
+
+.grid {
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.gridFullWidth{
+    width: 100%;
+}
+
+.gridRow{
+    display: flex;
+    flex-wrap: wrap; /* nếu kích thước các phần tử > width sẽ tự động xuống dòng*/
+    margin-left: -5px;
+    margin-right: -5px;
+}
+
+.content{
+    padding-top: 35px;
+}
+
+.gridColumn2{
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 16.6667%;
+}
+
+.gridColumn2-4{
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 20%;
+}
+
+.gridColumn10{
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 83.3334%;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes growth{
+    from{
+        transform: scale(var(--growth-from));
+    }   
+    to{
+        transform: scale(var(--growth-to));
+    }
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    animation : fadeIn linear 0.1s;
+}
+
+.modalOverlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modalBody{
+    --growth-form : 0.7;
+    --growth-to : 1;
+    margin: auto;
+    position: relative;
+    z-index: 1;
+    animation: growth linear 0.1s;
+}
+
+.btn{
+    min-width: 124px;
+    height: 34px;
+    text-decoration: none;
+    border :none;
+    border-radius: 2px;
+    font-size: 1.4rem;
+    padding: 0 8px;
+    outline: none;
+    cursor: pointer;
+    color: var(--text-color);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1.6rem;
+}
+
+.btn.btnNormal:hover{
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.btn.btnSizeS{
+    height: 32px;
+    font-size: 12px;
+}
+
+.btn.btnPrimary{
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+
+.btn.btnDisabled{
+    cursor: default;
+}
+
+.selectInput{
+    height: 34px;
+    min-width: 180px;
+    padding: 0 12px;
+    border-radius: 2px;
+    background-color: var(--white-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.selectInput:hover .selectInputList{
+    display: block;
+    z-index: 1;
+}
+
+.selectLabel{
+    font-size: 1.4rem;
+}
+
+.selectInputIcon{
+    font-size: 1.4rem;
+    color: #989892;
+    position: relative;
+    top: 1px;
+}
+
+.selectInputList{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 25px;
+    border-radius: 2px;
+    background-color: var(--white-color);
+    padding: 10px 16px ;
+    list-style: none;
+    display: none;
+}
+
+.selectInputItemLink{
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 1.4rem;
+    padding: 4px 0px;
+    display: block;
+}
+
+.selectInputItemLink:hover{
+    color: var(--primary-color);
+}
+
+.pagination{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+
+.paginationItem{
+    margin: 0 10px;
+}
+
+.paginationItemLink{
+    display: block;
+    text-decoration: none;
+    font-size: 1.8rem;
+    color: #939393;
+    min-width: 40px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 2px;
+    font-weight: 300;
+}
+
+.paginationItemActive{
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+
+.paginationItemActive:hover .paginationItemLink{
+    background-color: #ed5c3f;
+}
+
+
